@@ -21,7 +21,11 @@ format:
 ## Introduction
 
 ::: {.fragment}
-  
+- Today, we will talk about the problem called `startsWithZ`.  
+- The question is simple: **Can we decide whether a program’s output begins with the letter “Z”?**
+- At first glance, this looks easy—just run the program and check its output.  
+- However, we will see that this problem is actually incomputable,
+  and we will explain why using a **proof by contradiction**.  
 :::
 
 ## Proof by Contradiction
