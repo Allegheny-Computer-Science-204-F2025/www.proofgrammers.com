@@ -1,0 +1,49 @@
+---
+title: "Better understanding the `startsWithZ` Proof by Contradiction"
+description: "Explore the limits of `startsWithZ`"
+date: "2025-10-02"
+date-format: long
+author: Alexander Goddard, Issei Hasegawa, Javier Bejarano Jimenez, Miguel Orti Vila
+execute:
+  echo: true
+format:
+  live-revealjs:
+    completion: true
+    theme: default
+    css: ../../../css/styles.css
+    history: false
+    scrollable: true
+    transition: slide
+    highlight-style: github
+    footer: "Proofgrammers"
+---
+
+## Introduction
+
+::: {.fragment}
+  
+:::
+
+## Proof by Contradiction
+
+::: {.fragment}
+
+:::
+
+## Why the `startsWithZ` Proof by Contradiction can be Confusing
+
+::: {.fragment}
+
+:::
+
+## Some Ways that Helped Us Better Understand It 
+
+::: {.fragment}
+
+:::
+
+## Conclusion
+
+::: {.fragment}
+  
+:::
