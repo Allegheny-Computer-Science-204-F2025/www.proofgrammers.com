@@ -82,5 +82,10 @@ format:
 ## Conclusion
 
 ::: {.fragment}
-  
+- The `startsWithZ` proof shows how **self-reference leads to contradiction**.  
+- Even problems that look simple can be **incomputable** when programs analyze their own behavior.  
+- By contrasting *static* (structure-based) and *dynamic* (output-based) analysis,  
+  we gain insight into why some problems are computable while others are not.  
+- Ultimately, `startsWithZ` reminds us of the **limits of computation**  
+  and the power of **proof by contradiction**. 
 :::
