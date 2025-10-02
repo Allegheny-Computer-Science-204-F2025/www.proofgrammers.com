@@ -24,43 +24,80 @@ format:
 - Today, we will talk about the problem called `startsWithZ`.  
 - The question is simple: **Can we decide whether a program’s output begins with the letter “Z”?**
 - At first glance, this looks easy—just run the program and check its output.  
-- However, we will see that this problem is actually incomputable,
+- However, we will see that this problem is actually uncomputable,
   and we will explain why using a **proof by contradiction**.  
 :::
 
 ## Proof by Contradiction
 
 ::: {.fragment}
+**Step 1 — Assumption**
 
-**Step 1 — Assumption**  
-- Suppose `startsWithZ` exists and always decides correctly.  
+- Suppose `startsWithZ` exists and always decides correctly.
 
 **Step 2 — Trap Construction**
-- Then we can define:  
-  - `startsWithZSelf(P)`: checks if program `P`, when given itself as input, outputs a string that **starts with Z**.  
-  - `notStartsWithZSelf(P)`: does the opposite — it returns “yes” if `P`, when given itself as input, outputs a string that **does not start with Z**.  
 
-**Step 3 — Contradiction**  
-- Consider the program `weirdStartsWithZ`, which calls `startsWithZ` on its own code and returns the opposite:  
-  - If `startsWithZ` says “yes,” it returns “no.”  
-  - If `startsWithZ` says “no,” it returns “yes.”  
+- Then we can define:
+
+  - `startsWithZSelf(P)`: checks if program `P`, when given itself as input, outputs a string that **starts with Z**.
+
+  - `notStartsWithZSelf(P)`: does the opposite — it returns “yes” if `P`, when given itself as input, outputs a string that **does not start with Z**.
+
+**Step 3 — Contradiction**
+
+- Consider the program `weirdStartsWithZ`, which calls `startsWithZ` on its own code and returns the opposite:
+
+  - If `startsWithZ` says “yes,” it returns “no.”
+
+  - If `startsWithZ` says “no,” it returns “yes.”
 
 - When `weirdStartsWithZ` is run on itself, it returns “yes” **iff** it returns “no.” And it returns “no” iff it returns “yes.”
 
 - This is impossible, so our assumption was false.  
 
-**Conclusion**  
-- Therefore, `startsWithZ` cannot exist.  
+**Conclusion**
 
+- Therefore, `startsWithZ` cannot exist.
+:::
+
+
+## One-Slide Contradiction Check
+
+```{pyodide}
+#| autorun: true
+#| max-lines: 12
+def weird_starts_with_z(checker):
+    def F():
+        return 'Z' if not checker(F) else 'N'
+    return F
+
+def test_case(checker_answer):
+    def checker(_):
+        return checker_answer
+    F = weird_starts_with_z(checker)
+    claimed = checker(F)
+    actual = F().startswith('Z')
+    return claimed, actual
+
+print("🔍 Testing both possible answers:")
+print("="*49)
+for answer in [True, False]:
+    claimed, actual = test_case(answer)
+    status = "❌ CONTRADICTION" if claimed != actual else "✅ CONSISTENT"
+    print(f"Claims: {claimed:5} | Actual: {actual:5} | {status}")
+```
+
+::: {.fragment .boxed-content}
+**The contradiction is unavoidable** - every possible answer leads to a logical impossibility, proving that `startsWithZ` cannot exist.
 :::
 
 ## Why the `startsWithZ` Proof by Contradiction can be Confusing
 
 ::: {.fragment}
-- The concept of self-referential code can be difficult to understand. What will happen when the code runs on itself can be tough to wrap your head around
-- It seems like something that should be computable even though it isn't
-- Each step is carefully built on top of the other so if you misunderstand one part the rest will seem confusing
-- Due to the intricacy of steps inconsistency in wording/phrasing can lead to major confusion
+- The concept of self-referential code can be difficult to understand. What will happen when the code runs on itself can be tough to wrap your head around.
+- It seems like something that should be computable even though it isn't.
+- Each step is carefully built on top of the other so if you misunderstand one part the rest will seem confusing.
+- Due to the intricacy of steps inconsistency in wording/phrasing can lead to major confusion.
 :::
 
 ## Some Ways that Helped Us Better Understand It 
@@ -68,24 +105,20 @@ format:
 ::: {.fragment}
 - Focus: Static vs. Dynamic Analysis 
 - **Static Analysis**  
-  - Analyze the *code structure* without running it (just look at).
-  - Typicaly computable
-  - Example: 'countLine', 'beginWithA'
+  - Analyze the *code structure* without running it (just look at it).
+  - Typicaly computable.
 
 - **Dynamic Analysis** 
   - Analyze the *output* of a program.
   - Imagine *running the program with itself as input*.
-  - More likely to be uncompuatble
-  - Example: 'yesOnString', 'crashOnstring'
+  - More likely to be uncompuatble.
 :::
 
 ## Conclusion
 
 ::: {.fragment}
-- The `startsWithZ` proof shows how **self-reference leads to contradiction**.  
-- Even problems that look simple can be **incomputable** when programs analyze their own behavior.  
-- By contrasting *static* (structure-based) and *dynamic* (output-based) analysis,  
-  we gain insight into why some problems are computable while others are not.  
-- Ultimately, `startsWithZ` reminds us of the **limits of computation**  
-  and the power of **proof by contradiction**. 
+- The `startsWithZ` proof shows how **self-reference leads to contradiction**.
+- Even problems that look simple can be **incomputable** when programs analyze their own behavior.
+- By contrasting *static* (structure-based) and *dynamic* (output-based) analysis, we gain insight into why some problems are computable while others are not.
+- Ultimately, `startsWithZ` reminds us of the **limits of computation** and the power of **proof by contradiction**.
 :::
