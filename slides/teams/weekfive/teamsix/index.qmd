@@ -45,7 +45,7 @@ format:
   - If `startsWithZ` says “yes,” it returns “no.”  
   - If `startsWithZ` says “no,” it returns “yes.”  
 
-- When `weirdStartsWithZ` is run on itself, it returns “yes” **iff** it returns “no.”  
+- When `weirdStartsWithZ` is run on itself, it returns “yes” **iff** it returns “no.” And it returns “no” iff it returns “yes.”
 
 - This is impossible, so our assumption was false.  
 
