@@ -57,7 +57,10 @@ format:
 ## Why the `startsWithZ` Proof by Contradiction can be Confusing
 
 ::: {.fragment}
-
+- The concept of self-referential code can be difficult to understand. What will happen when the code runs on itself can be tough to wrap your head around
+- It seems like something that should be computable even though it isn't
+- Each step is carefully built on top of the other so if you misunderstand one part the rest will seem confusing
+- Due to the intricacy of steps inconsistency in wording/phrasing can lead to major confusion
 :::
 
 ## Some Ways that Helped Us Better Understand It 
