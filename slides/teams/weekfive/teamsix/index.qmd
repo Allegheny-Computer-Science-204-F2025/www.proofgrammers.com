@@ -37,8 +37,8 @@ format:
 
 **Step 2 — Trap Construction**  
 - Then we can define:  
-  - `startsWithZSelf(P)`: checks if program `P` outputs a Z-string when given itself as input.  
-  - `notStartsWithZSelf(P)`: flips the answer, checking if `P` outputs a **non-Z-string** when given itself as input.  
+  - `startsWithZSelf(P)`: checks if program `P`, when given itself as input, outputs a string that **starts with Z**.  
+  - `notStartsWithZSelf(P)`: does the opposite — it returns “yes” if `P`, when given itself as input, outputs a string that **does not start with Z**.  
 
 **Step 3 — Contradiction**  
 - Consider the program `weirdStartsWithZ`, which calls `startsWithZ` on its own code and returns the opposite:  
