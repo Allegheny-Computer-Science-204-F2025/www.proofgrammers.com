@@ -35,7 +35,7 @@ format:
 **Step 1 — Assumption**  
 - Suppose `startsWithZ.py` exists and always decides correctly.  
 
-**Step 2 — Trap Construction**  
+**Step 2 — Trap Construction**
 - Then we can define:  
   - `startsWithZSelf(P)`: checks if program `P`, when given itself as input, outputs a string that **starts with Z**.  
   - `notStartsWithZSelf(P)`: does the opposite — it returns “yes” if `P`, when given itself as input, outputs a string that **does not start with Z**.  
