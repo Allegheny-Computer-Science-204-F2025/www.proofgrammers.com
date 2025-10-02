@@ -66,13 +66,16 @@ format:
 ## Some Ways that Helped Us Better Understand It 
 
 ::: {.fragment}
-Focus: Static vs. Dynamic Analysis 
+- Focus: Static vs. Dynamic Analysis 
 - **Static Analysis**  
   - Analyze the *code structure* without running it (just look at).
-  - Example: 'countLine', 'beginWithZ'
+  - Typicaly computable
+  - Example: 'countLine', 'beginWithA'
 
 - **Dynamic Analysis** 
+  - Analyze the *output* of a program.
   - Imagine *running the program with itself as input*.
+  - More likely to be uncompuatble
   - Example: 'yesOnString', 'crashOnstring'
 :::
 
