@@ -33,7 +33,7 @@ format:
 ::: {.fragment}
 
 **Step 1 — Assumption**  
-- Suppose `startsWithZ.py` exists and always decides correctly.  
+- Suppose `startsWithZ` exists and always decides correctly.  
 
 **Step 2 — Trap Construction**
 - Then we can define:  
@@ -50,7 +50,7 @@ format:
 - This is impossible, so our assumption was false.  
 
 **Conclusion**  
-- Therefore, `startsWithZ.py` cannot exist.  
+- Therefore, `startsWithZ` cannot exist.  
 
 :::
 
