@@ -32,6 +32,26 @@ format:
 
 ::: {.fragment}
 
+**Step 1 — Assumption**  
+- Suppose `startsWithZ.py` exists and always decides correctly.  
+
+**Step 2 — Trap Construction**  
+- Then we can define:  
+  - `startsWithZSelf(P)`: checks if program `P` outputs a Z-string when given itself as input.  
+  - `notStartsWithZSelf(P)`: flips the answer, checking if `P` outputs a **non-Z-string** when given itself as input.  
+
+**Step 3 — Contradiction**  
+- Consider the program `weirdStartsWithZ`, which calls `startsWithZ` on its own code and returns the opposite:  
+  - If `startsWithZ` says “yes,” it returns “no.”  
+  - If `startsWithZ` says “no,” it returns “yes.”  
+
+- When `weirdStartsWithZ` is run on itself, it returns “yes” **iff** it returns “no.”  
+
+- This is impossible, so our assumption was false.  
+
+**Conclusion**  
+- Therefore, `startsWithZ.py` cannot exist.  
+
 :::
 
 ## Why the `startsWithZ` Proof by Contradiction can be Confusing
